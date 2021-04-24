@@ -78,3 +78,10 @@ If you want to change something with your order like : if you don't want to sell
 <br />
 <br />
 If you want to edit your order you can do this again by entering the code into the field and then while editing you just have to enter only those fields which you want to change and click "**submit**".
+
+### How to Run
+```Bash
+flask run
+```
+### Requirements
+See the requirements.txt and install the listed packages in your machine or in virtual environment.
