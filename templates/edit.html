@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    edit
+{% endblock %}
+
+{% block main %}
+    <table class="newtable">
+            <tr style="color: white;">
+<!--                <th class="col-sm-3">Image</th>-->
+<!--                <th class="col-sm-2">Name</th>-->
+<!--                <th class="col-sm-3">Description</th>-->
+<!--                <th class="col-sm-1">Price</th>-->
+<!--                <th class="col-sm-2">Images</th>-->
+<!--                <th class="col-sm-1">Seller</th>-->
+
+                <th class="col1">Image</th>
+                <th class="col2">Name</th>
+                <th class="col3">Description</th>
+                <th class="col4">Price</th>
+                <th class="col5">Images</th>
+            </tr>
+
+            {% for item in saleitems %}
+            <tbody style="color: white; font-size: 20px;">
+                <tr class="parent">
+<!--                    <td class="col-sm-1"><img src="{{ item['bimagename'] }}" alt="image" height="200px" width="250px"></td>-->
+<!--                    <td class="col-sm-1">{{ item["name"] }}</td>-->
+<!--                    <td class="col-sm-1"><p class="white-space:pre-line;">{{ item["discription"] }}</p></td>-->
+<!--                    <td class="col-sm-1">{{ item["price"] }}</td>-->
+<!--                    <td class="col-sm-1">-->
+
+                    <td class="col1"><img src="{{ item['bimagename'] }}" alt="image" height="200px" width="250px"></td>
+                    <td class="col2">{{ item["name"] }}</td>
+                    <td class="col3"><p style="white-space: pre-wrap;">{{ item["discription"] }}</p></td>
+                    <td class="col4">₹{{ item["price"] }}</td>
+                    <td class="col5">
+                        {% for image in images %}
+                            <img src="{{ image['imagename'] }}" alt="productimages" height="30px" width="50px" class="buyimage">
+                        {% endfor %}
+                    </td>
+                </tr>
+
+                <tr class="cchild">
+                    <th colspan="2">Name</th>
+                    <th colspan="2">Mobile Number</th>
+                    <th colspan="2">Email-id</th>
+                </tr>
+                <tr class="cchild">
+                    <td colspan="2">{{ item["fullname"] }}</td>
+                    <td colspan="2">{{ item["mobilenumber"] }}</td>
+                    <td colspan="2">{{ item["email"] }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+
+        <script>
+            $('table').on('click', 'tr.parent .fa-chevron-down', function(){
+          $(this).closest('tbody').toggleClass('open');
+            });
+        </script>
+        </table>
+    <h4 style="color:red">*Change only those fields you want to change*</h4>
+
+    <form method="post" action="/editorders" enctype="multipart/form-data">
+            {% for item in saleitems %}
+                <div class = "form-group">
+
+                    <input type="text" name="name" placeholder="Name" class="form-control" value="{{ item['name'] }}">
+                    <input type="number" name="price" placeholder="Price" class="form-control" value="{{ item['price'] }}">
+
+                </div>
+
+
+                <textarea rows="6" cols="70" name="discription" class="form-control" >{{ item["discription"] }}</textarea>
+            {% endfor %}
+            <div class="form-group" style="color:white;">
+
+                code: <input type="number" name="code" class="form-control" value="{{ code }}" readonly>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+    <!--            <input type = "submit" class="form-control">-->
+            </div>
+        </form>
+{% endblock %}

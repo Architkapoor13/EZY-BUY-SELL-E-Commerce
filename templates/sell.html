@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sell
+{% endblock %}
+
+{% block script %}
+    <script language="javascript" type="text/javascript">
+    function dynamicdropdown(listindex)
+    {
+        switch (listindex)
+        {
+        case "furniture" :
+            document.getElementById("status").options[0]=new Option("Select type","");
+            document.getElementById("status").options[1]=new Option("Table","table");
+            document.getElementById("status").options[2]=new Option("Chair","chair");
+            document.getElementById("status").options[3]=new Option("Sofa","sofa");
+            document.getElementById("status").options[4]=new Option("Cabinets","cabinets");
+            document.getElementById("status").options[5]=new Option("Other Items","other items");
+            break;
+        case "automobile" :
+            document.getElementById("status").options[0]=new Option("Select type","");
+            document.getElementById("status").options[1]=new Option("Car","car");
+            document.getElementById("status").options[2]=new Option("Scooter","scooter");
+            document.getElementById("status").options[3]=new Option("Bike","bikes");
+            document.getElementById("status").options[4]=new Option("Cycle","cycle");
+            document.getElementById("status").options[5]=new Option("Other Items","other items");
+            break;
+        case "electronics" :
+            document.getElementById("status").options[0]=new Option("Select type","");
+            document.getElementById("status").options[1]=new Option("Mobile","mobile");
+            document.getElementById("status").options[2]=new Option("Computer","computer");
+            document.getElementById("status").options[3]=new Option("Television","television");
+            document.getElementById("status").options[4]=new Option("Eaccessories","eaccessories");
+            document.getElementById("status").options[5]=new Option("Other Items","other items");
+            break;
+        case "household items" :
+            document.getElementById("status").options[0]=new Option("Select type","");
+            document.getElementById("status").options[1]=new Option("Fridge","fridge");
+            document.getElementById("status").options[2]=new Option("Washing Machine","washing machine");
+            document.getElementById("status").options[3]=new Option("Kitchen Accessories","kitchen accessories");
+            document.getElementById("status").options[4]=new Option("Air Conditioner","air conditioner");
+            document.getElementById("status").options[5]=new Option("Other Items","other items");
+            break;
+        }
+        return true;
+    }
+    </script>
+{% endblock %}
+
+    {% block header %}
+        <h2 class="text-light">Sell Anything you want!</h2>
+    {% endblock %}
+
+{% block main %}
+    <div class="acc1">
+        <div>
+            <img src="{{ propic }}" alt="no image" height="170px" width="170px">
+<!--            <img src="../static/{{ propic }}" alt="no image" height="170px" width="170px">-->
+            <h1>{{ username }}</h1>
+        </div>
+    </div>
+    <div class="acc2" style="text-align:left; padding-left:250px;">
+        <form method="post" action="/sell" enctype="multipart/form-data">
+            <div class="form-group" id="category_div">
+                <select id="source" name="source" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                    <option value="">Select Type</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="automobile">Automobile</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="household items">Household Items</option>
+                </select>
+            </div>
+
+
+            <div class="form-group" id="sub_category_div">
+                <script type="text/javascript" language="JavaScript">
+                    document.write('<select name="status" id="status"><option value="">Select type</option></select>')
+                </script>
+                <noscript>
+                <select id="status" name="status">
+
+                </select>
+                </noscript>
+            </div>
+
+            <div class = "form-group">
+                <input type="text" name="name" placeholder="Name" class="form-control">
+                <input type="number" name="price" placeholder="Price" class="form-control">
+            </div>
+
+
+            <textarea rows="6" cols="70" placeholder="Item Description" name="discription" class="form-control" id="text1" ></textarea>
+
+            <div class="form-group">
+                Upload images!
+                <input type = "file" multiple="" name="files[]">
+                <br>
+                <button type="submit" class="btn btn-primary">Upload</button>
+    <!--            <input type = "submit" class="form-control">-->
+            </div>
+        </form>
+    </div>
+{% endblock %}

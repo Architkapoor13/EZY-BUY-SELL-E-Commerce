@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Account
+{% endblock %}
+
+{% block header %}
+        <h2 class="text-light">My Account</h2>
+{% endblock %}
+
+{% block main %}
+
+    <div class="acc1">
+        <div>
+            <img src="{{ propic }}" alt="Profile Picture" height="170px" width="170px">
+<!--            <img src="../static/{{ propic }}" alt="no image" height="170px" width="170px">-->
+            <h1>{{ username }}</h1>
+        </div>
+    </div>
+
+
+    <div class="acc2">
+        <p>
+            <h2><b>Name: {{ name }}</b></h2>
+        </p>
+        <p>
+            <h2><b>Mobile Number: {{ phonenumber }}</b></h2>
+        </p>
+        <p>
+            <h2><b>Email: {{ email }}</b></h2>
+        </p>
+        <p>
+            <h2><b>Address: {{ address }}</b></h2>
+        </p>
+
+        <p>
+            <h2>Change your display picture here!</h2>
+            <form method="post" action="/account" enctype="multipart/form-data">
+                <input type="file" name="dp">
+                <button type="submit" class="btn btn-primary">Upload new DP</button>
+            </form>
+        </p>
+
+<!--        <p>-->
+<!--            <h2>edit</h2>-->
+<!--            <form method="get" action="/edit" class="form-group">-->
+<!--                <input type="submit" value="Edit" class="btn btn-primary">-->
+<!--&lt;!&ndash;                <button type="submit" class="btn btn-primary">Edit</button>&ndash;&gt;-->
+<!--            </form>-->
+<!--        </p>-->
+    </div>
+
+{% endblock %}

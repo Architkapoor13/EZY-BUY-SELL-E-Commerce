@@ -1,0 +1,287 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+#h11
+{
+    text-align: centre;
+}
+
+.acc1
+{
+    padding-top:30px;
+    float:left;
+    height:100%;
+    width:20%;
+    color:white;
+}
+
+.acc2
+{
+    text-align:left;
+    font-size:25px;
+    padding-top:30px;
+    float:left;
+    height:100%;
+    width:80%;
+    color:white;
+}
+
+.acc2 p
+{
+    padding:5px;
+}
+
+.buy1
+{
+    float:left;
+    color:white;
+    height:100%;
+    width:15%;
+
+}
+
+.buy2
+{
+    float:left;
+    height:100%;
+    width:80%;
+    padding-left:5px;
+}
+
+
+.table
+{
+    table-layout:fixed;
+    width:100%;
+    overflow-wrap: break-word;
+}
+
+td, th {
+  border-bottom: 1px solid white;
+  padding: 15px;
+  text-align:left;
+}
+tr
+{
+    color:white;
+}
+
+
+
+.parent ~ .cchild {
+  display: none;
+}
+.open .parent ~ .cchild {
+  display: table-row;
+}
+.parent {
+  cursor: pointer;
+}
+tbody {
+  color: #212121;
+}
+.open {
+
+}
+
+.open .cchild {
+
+  color: white;
+}
+.parent > *:last-child {
+  width: 30px;
+}
+.parent i {
+  transform: rotate(0deg);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  margin: -.5rem;
+  padding: .5rem;
+
+}
+.open .parent i {
+  transform: rotate(180deg)
+}
+
+.buyimage:hover
+{
+    transform: scale(9);
+    transition: transform:0.5s;
+
+}
+
+.login-left
+{
+    float:left;
+    height:100%;
+    width:30%
+}
+
+.login-right
+{
+    float:left;
+    height:100%;
+    width:70%;
+}
+
+
+
+.login-image
+{
+    background-color:black;
+    overflow: hidden;
+    width:20%;
+    height:150px;
+    float:left;
+}
+
+.login-images
+{
+    opacity: 0.7;
+    transform: scale(1.05);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.login-images:hover
+{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.index
+{
+    text-align:left;
+    font-size:25px;
+    padding-top:30px;
+    float:left;
+    height:100%;
+    width:100%;
+    color:white;
+}
+
+textarea
+{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+select
+{
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    padding: 3px 6px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.forgotpass
+{
+    color:yellow;
+}
+
+.forgotpass:hover
+{
+    color:white;
+
+}
+
+#text1
+{
+    white-space: pre-wrap;
+}
+
+.newtable
+{
+    table-layout:fixed;
+    width:100%;
+    overflow-wrap: break-word;
+}
+
+.col1
+{
+    width:23%;
+    vertical-align:top;
+}
+
+.col2
+{
+    width:16.6%;
+    vertical-align:top;
+}
+
+.col3
+{
+    width:30%;
+    vertical-align:top;
+}
+
+
+.col4
+{
+    width:12.26%;
+    vertical-align:top;
+}
+
+.col5
+{
+    width:15%;
+    vertical-align:top;
+}
+
+.col6
+{
+    width:6%;
+    text-align:center;
+    vertical-align:top;
+}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Forget Password
+{% endblock %}
+
+{% block main %}
+    <form action="/forgetp" method="post">
+        <h1 style="color:white;">Enter the registered email of your account to change its password</h1>
+        <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="text">
+        <input type="submit" class="btn btn-primary">
+    </form>
+{% endblock %}

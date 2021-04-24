@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block header %}
+    <h2 class="text-light">Login or Register if you haven't done yet!</h2>
+{% endblock %}
+
+{% block main %}
+<!--    {% with messages = get_flashed_messages() %}-->
+<!--      {% if messages %}-->
+<!--        <ul class=flashes>-->
+<!--        {% for message in messages %}-->
+<!--          <li>{{ message }}</li>-->
+<!--        {% endfor %}-->
+<!--        </ul>-->
+<!--      {% endif %}-->
+<!--    {% endwith %}-->
+    <div>
+        <h1 style="color:white;">Welcome to EZY-BUY-SELL</h1>
+    </div>
+    <br>
+    <div class="login-right">
+        {% for n in range(10) %}
+            <div class="login-image">
+                <img src="../static/login{{ range(1,41) | random }}.jpg" alt="image" height="100%", width="100%" class="login-images">
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="login-left">
+        <h1 style="color:white">Login</h1>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <a href="/forgetp" class="forgotpass">forgot password?</a>
+            <br>
+            <br>
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </form>
+        <br>
+        <p style="color:white;">
+            Register if you haven't <a href="/register" class="forgotpass">here</a>
+        </p>
+    </div>
+
+    <div style="color:white;">
+        <p>
+
+            <br><br>
+            <h2>Buy or sell stuff here!</h2>
+            <br><br>
+            <h2>Login if you already have an account or register yourself today!</h2>
+        </p>
+    </div>
+{% endblock %}

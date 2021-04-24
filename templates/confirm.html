@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    confirm
+{% endblock %}
+
+{% block main %}
+    <div style="colorwhite">
+        <form action="/confirm/<token>" method="post">
+            <input type="text" name="username" class="form-group" placeholder="username">
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<!--    <div class="acc1">-->
+<!--        <img src="{{ propic }}" alt="Profile Picture" height="170px" width="170px">-->
+<!--&lt;!&ndash;            <img src="../static/{{ propic }}" alt="no image" height="170px" width="170px">&ndash;&gt;-->
+<!--        <h1>{{ username }}</h1>-->
+<!--    </div>-->
+
+    <div class="index" style="text-align:center; font-family:monaco; color:white;">
+        <p style="font-size:50px">
+            Wellcome to <span style="color:blue;">EZY</span><span style="color:red;">-</span><span  style="color:yellow;">BUY</span><span style="color:green;">-</span> <span style="color:red;">SELL</span>
+            <img src="../static/index.png" height="200px" width="200px">
+        </p>
+        <p style="white-space: pre-line; font-size:35px; padding:0px;">
+            This is an easy option for you to buy & sell stuff!
+
+        </p>
+        <p style="font-size:40px;">
+            Buy something you like here - <a href="/buy" class="btn btn-outline-warning btn-lg" role="button">BUY</a>
+            or
+            Sell something here - <a href="/sell" class="btn btn-outline-warning btn-lg" role="button">SELL</a>
+        </p>
+        <p style="font-size:20px">
+            For more information check the website's documentation <a href="/documentation">here</a>
+        </p>
+
+    </div>
+
+{% endblock %}

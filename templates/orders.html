@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Orders
+{% endblock %}
+
+{% block main %}
+
+    <div class="buytable" style="color:white;">
+        <table class="table" >
+            <tr style="color:white;">
+                <th>Image</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>code</th>
+            </tr>
+            {% for detail in details %}
+                <tr>
+                    <td><img src="{{ detail['bimagename'] }}" alt="image" height="200px" width="250px"></td>
+                    <td>{{ detail["name"] }}</td>
+                    <td>{{ detail["itemname"] }}</td>
+                    <td>{{ detail["price"] }}</td>
+                    <td>{{ detail["code"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div style="color:white;">
+        <h1>Want to change something with your order?</h1>
+        <br>
+        <h2>Delete your orders</h2>
+        <form action ="/delete" method="post">
+            Enter the code of the order you want to delete:
+            <input type="number" name="code" placeholder="code">
+            <button class="btn btn-primary">Delete</button>
+        </form>
+        <h2>Edit your orders:</h2>
+        <form method="post" action ="/edit">
+            Enter the code of the order you want to edit:
+            <input type="number" name="code" placeholder="code">
+            <button class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+
+{% endblock %}
